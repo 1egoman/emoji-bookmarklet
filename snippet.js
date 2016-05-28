@@ -31,7 +31,11 @@ function getEmoji(inword) {
 }
 
 $(document).ready(function() {
-  $("p").each(function(i) {
+  $("body").prepend("<p class='loading-emoji'>Loading Emoji...</p>")
+
+  let all = $("p");
+  let total = all.length;
+  all.each(function(i) {
     let words = $(this).text().split(" ");
 
     // loop by words
@@ -48,11 +52,14 @@ $(document).ready(function() {
           } else {
             content = words[ct];
           }
+          content = content.split("\n").join(" ");
 
+          // assemble the emoji string image
           let emojiString = twemoji.parse(
             String.fromCodePoint(parseInt(emoji.payload.unicode, 16))
           );
 
+          // return the markup
           return `
             <span
             style='cursor: default;'
@@ -65,9 +72,31 @@ $(document).ready(function() {
       }).join(" ");
 
       this.innerHTML = text;
+    }).then(() => {
+      // on final iteration
+      total--;
+      console.log(total)
+      if (total <= 0) {
+        $(".loading-emoji").remove();
+      }
+    }).catch((error) => {
+      total--;
+      console.error(error);
     });
   });
 
-  $("head").append(`<style> img.emoji { height: 1em; padding: 0px; margin: 0px; } </style>`);
+  $("head").append(`<style>
+    img.emoji { height: 1em; padding: 0px; margin: 0px; }
+    .loading-emoji {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 10em;
+      padding: 20px;
+      background-color: #333;
+      color: #fff;
+      z-index: 9999999999999;
+    }
+  </style>`);
 });
 
