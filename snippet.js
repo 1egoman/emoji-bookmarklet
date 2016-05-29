@@ -33,7 +33,7 @@ function getEmoji(inword) {
 $(document).ready(function() {
   $("body").prepend("<p class='loading-emoji'>Loading Emoji...</p>")
 
-  let all = $("p");
+  let all = $("p, span, h1, h2, h3, h4, h5, h6");
   let total = all.length;
   all.each(function(i) {
     let words = $(this).text().split(" ");
@@ -75,7 +75,7 @@ $(document).ready(function() {
     }).then(() => {
       // on final iteration
       total--;
-      console.log(total)
+      console.log(total, "emoji left...");
       if (total <= 0) {
         $(".loading-emoji").remove();
       }
