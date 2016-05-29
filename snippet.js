@@ -25,9 +25,9 @@ let getEmoji = memoizePromise(function getEmoji(inword) {
         console.log(i, word)
         // first, try to fnd an exact match
         // otherwise, find the first close match
-        let match = i.emoji.find(i => i.code === word.clean);
+        let match = i.emoji.find(j => j.code === word.clean);
         if (!match) {
-          match = i.emoji.find(i => word.clean.length <= i.code.length + 2);
+          match = i.emoji.find(j => word.clean.length <= j.code.length + 2);
         }
 
         resolve({
