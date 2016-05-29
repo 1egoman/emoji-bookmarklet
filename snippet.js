@@ -1,6 +1,7 @@
 "use strict";
 const $ = require("jquery"),
       twemoji = require("twemoji"),
+      memoizePromise = require("memoize-promise"),
       Promise = require("promise-polyfill");
 
 const punctuation = /([!"#\$%&'\(\)\*\+,-.\/:;\<=>\?@\[\]\^_`{\|}~])$/g;
@@ -14,9 +15,9 @@ function cleanWord(word) {
 }
 
 // get the emoji character for a word
-function getEmoji(inword) {
+let getEmoji = memoizePromise(function getEmoji(inword) {
   if (inword.length < 4) {
-    return null;
+    return Promise.resolve(null);
   } else {
     return new Promise((resolve, reject) => {
       let word = cleanWord(inword);
@@ -28,12 +29,12 @@ function getEmoji(inword) {
       }, reject);
     });
   }
-}
+});
 
 $(document).ready(function() {
   $("body").prepend("<p class='loading-emoji'>Loading Emoji...</p>")
 
-  let all = $("p");
+  let all = $("p, span, h1, h2, h3, h4, h5, h6");
   let total = all.length;
   all.each(function(i) {
     let words = $(this).text().split(" ");
