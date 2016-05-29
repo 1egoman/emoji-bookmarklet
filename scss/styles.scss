@@ -1,0 +1,83 @@
+@import url(https://fonts.googleapis.com/css?family=Salsa);
+@import "normalize";
+
+$color-emoji: #ffcc00;
+$color-black: #333;
+$color-gray: #ccc;
+
+h1, h2, h3 {
+  font-family: "Salsa", "Helvetica", "Arial", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: $color-black;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// the header
+header {
+  height: 20em;
+
+  img {
+    max-width: 300px;
+    width: 40%;
+    float: left;
+  }
+  .block {
+    width: 56%;
+    float: left;
+    padding-left: 4%;
+
+    h1 {
+      font-size: 4em;
+    }
+    h2 {
+      font-size: 2.4em;
+    }
+  }
+}
+
+.instruction {
+  font-size: 1.8em;
+}
+
+
+// the button to drag to the bookmarks bar
+.snippet-button {
+  background-color: $color-gray;
+  color: $color-black;
+  text-decoration: none;
+  font-family: "Salsa", "Helvetica", "Arial", sans-serif;
+
+  display: block;
+  font-size: 3.6rem;
+  width: 8em;
+  padding: 0.3em;
+  margin: 0.3em auto;
+
+  img {
+    vertical-align: middle;
+    height: 1.5em;
+    margin-top: -0.5em;
+    margin-right: 0.5em;
+  }
+}
+
+.well {
+  font-size: 1.4em;
+  float: left;
+  &:before {
+    content: "Example:";
+    display: block;
+    font-size: 0.8em;
+    margin-bottom: 0.4em;
+  }
+}
