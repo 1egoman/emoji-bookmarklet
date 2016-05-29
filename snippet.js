@@ -32,7 +32,7 @@ let getEmoji = memoizePromise(function getEmoji(inword) {
 });
 
 $(document).ready(function() {
-  let all = $("p, span, h1, h2, h3, h4, h5, h6");
+  let all = $("p, p strong, p em, p b, span, h1, h2, h3, h4, h5, h6");
   let total = all.length;
 
   $("body").prepend("<p class='loading-emoji'>Loading Emoji...</p>")
