@@ -24,7 +24,7 @@ let getEmoji = memoizePromise(function getEmoji(inword) {
       $.get("https://www.emojidex.com/api/v1/search/emoji?code_sw="+word.clean).then(function(i) {
         resolve({
           endsWith: word.ends,
-          payload: i.emoji.reverse().find(i => i.unicode && i.unicode.length),
+          payload: i.emoji.find(i => word.length <= i.length + 2),
         });
       }, reject);
     });
