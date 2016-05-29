@@ -22,6 +22,7 @@ let getEmoji = memoizePromise(function getEmoji(inword) {
     return new Promise((resolve, reject) => {
       let word = cleanWord(inword);
       $.get("https://www.emojidex.com/api/v1/search/emoji?code_sw="+word.clean).then(function(i) {
+        console.log(i, word)
         // first, try to fnd an exact match
         // otherwise, find the first close match
         let match = i.emoji.find(i => i.code === word.clean);
