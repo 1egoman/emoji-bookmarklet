@@ -37,8 +37,6 @@ $(document).ready(function() {
 
   $("body").prepend("<p class='loading-emoji'>Loading Emoji...</p>")
 
-  let all = $("p, span, h1, h2, h3, h4, h5, h6");
-  let total = all.length;
   all.each(function(i) {
     let words = Array.prototype.concat.apply(
       [],
