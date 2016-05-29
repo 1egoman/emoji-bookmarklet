@@ -27,7 +27,7 @@ let getEmoji = memoizePromise(function getEmoji(inword) {
         let match = i.emoji.find(j => j.code === word.clean.trim());
         if (!match) {
           match = i.emoji.find(j => {
-            return word.clean.trim().length > j.code.length - 2;
+            return word.clean.trim().length > j.code.length - 3;
           });
         }
 
