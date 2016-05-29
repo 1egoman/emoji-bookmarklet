@@ -32,15 +32,39 @@ let getEmoji = memoizePromise(function getEmoji(inword) {
 });
 
 $(document).ready(function() {
+  let all = $("p, span, h1, h2, h3, h4, h5, h6");
+  let total = all.length;
+
   $("body").prepend("<p class='loading-emoji'>Loading Emoji...</p>")
 
   let all = $("p, span, h1, h2, h3, h4, h5, h6");
   let total = all.length;
   all.each(function(i) {
-    let words = $(this).text().split(" ");
+    let words = Array.prototype.concat.apply(
+      [],
+      $(this).contents().map((ct, item) => {
+        if (item.nodeType === 3) { // is text?
+          return item.data.split(" ");
+        } else {
+          return item;
+        }
+      })
+    ).filter(i => {
+      if (typeof i === "string") {
+        return i.trim().length > 0;
+      } else {
+        return true;
+      }
+    });
 
     // loop by words
-    let promises = words.map(word => getEmoji(word));
+    let promises = words.map(word => {
+      if (typeof word === "string") {
+        return getEmoji(word)
+      } else {
+        return null;
+      }
+    });
 
     // loop through all promises and get the emoji for each word
     Promise.all(promises).then(emojis => {
@@ -67,6 +91,8 @@ $(document).ready(function() {
             title='${content}'>
             ${emojiString}
             </span>` + (emoji.endsWith || "");
+        } else if (typeof words[ct] !== "string") {
+          return $(words[ct]).prop('outerHTML');
         } else {
           return words[ct];
         }
@@ -76,7 +102,7 @@ $(document).ready(function() {
     }).then(() => {
       // on final iteration
       total--;
-      console.log(total)
+      console.log(total, "emoji left...");
       if (total <= 0) {
         $(".loading-emoji").remove();
       }
