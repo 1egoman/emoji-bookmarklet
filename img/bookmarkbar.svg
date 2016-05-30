@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="182.5399mm"
-   height="40mm"
-   viewBox="0 0 646.79493 141.73228"
+   width="650"
+   height="200"
+   viewBox="0 0 650.00001 199.99999"
    id="svg7016"
    version="1.1"
    inkscape:version="0.91 r"
@@ -19,18 +19,34 @@
   <defs
      id="defs7018">
     <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker4653"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="matrix(0.8,0,0,0.8,10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
+         id="path4655"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
        inkscape:stockid="Arrow1Lstart"
        orient="auto"
        refY="0"
        refX="0"
        id="Arrow1Lstart"
        style="overflow:visible"
-       inkscape:isstock="true">
+       inkscape:isstock="true"
+       inkscape:collect="always">
       <path
          inkscape:connector-curvature="0"
          id="path4206"
          d="M 0,0 5,-5 -12.5,0 5,5 0,0 Z"
-         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:1pt;stroke-opacity:1"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
          transform="matrix(0.8,0,0,0.8,10,0)" />
     </marker>
   </defs>
@@ -41,9 +57,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="322.75166"
-     inkscape:cy="-24.249078"
+     inkscape:zoom="2.8"
+     inkscape:cx="309.01672"
+     inkscape:cy="92.940695"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -52,10 +68,11 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1054"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-height="1004"
+     inkscape:window-x="1920"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     units="px" />
   <metadata
      id="metadata7021">
     <rdf:RDF>
@@ -72,11 +89,11 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(243.39747,-685.47549)">
+     transform="translate(243.39747,-534.50037)">
     <g
        id="g5101"
        style="opacity:0.61000001"
-       transform="translate(-406.25534,292.7409)">
+       transform="translate(-406.25534,139.65552)">
       <path
          inkscape:connector-curvature="0"
          style="opacity:1;fill:#c8e0eb;fill-opacity:1;stroke:none;stroke-width:4.05000019;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -364,9 +381,9 @@
       </g>
     </g>
     <path
-       style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#333333;stroke-width:4.50449371;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart)"
-       d="m -13.504079,752.89712 47.091871,65.62755"
-       id="path4538"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.4000001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart)"
+       d="m -34.397084,597.30826 c -0.97701,13.64533 -9.04346,83.55897 49.642854,135.35715"
+       id="path4205"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
   </g>

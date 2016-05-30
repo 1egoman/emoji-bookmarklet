@@ -30,17 +30,34 @@ header {
     max-width: 300px;
     width: 40%;
     float: left;
+    margin-left: 30%;
+    @media screen and (min-width: 650px) {
+      margin-left: 0%;
+    }
   }
   .block {
-    width: 56%;
+    width: 100%;
     float: left;
-    padding-left: 4%;
+    @media screen and (min-width: 650px) {
+      width: 56%;
+      padding-left: 4%;
+    }
 
     h1 {
-      font-size: 4em;
+      font-size: 2.8em;
+      text-align: center;
     }
     h2 {
-      font-size: 2.4em;
+      font-size: 1.6em;
+      text-align: center;
+    }
+    @media screen and (min-width: 650px) {
+      h1 {
+        font-size: 4em;
+      }
+      h2 {
+        font-size: 2.4em;
+      }
     }
   }
 }
