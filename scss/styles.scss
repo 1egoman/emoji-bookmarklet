@@ -9,6 +9,11 @@ h1, h2, h3 {
   font-family: "Salsa", "Helvetica", "Arial", sans-serif;
 }
 
+@mixin full-width {
+  width: 100%;
+  max-width: 800px;
+}
+
 body {
   background: #fff;
   color: $color-black;
@@ -86,6 +91,29 @@ header {
     height: 1.5em;
     margin-top: -0.5em;
     margin-right: 0.5em;
+  }
+}
+
+// on desktops: Add to bookmarks bar
+.bookmark-bar {
+  margin: 0px auto;
+  width: 650px;
+  display: none;
+  @media screen and (min-width: 650px) {
+    display: block;
+  }
+}
+
+// on mobile: add bookmark by copying code
+.bookmark-bar-mobile {
+  display: block;
+  @include full-width;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  padding: 1em;
+
+  @media screen and (min-width: 650px) {
+    display: none;
   }
 }
 
