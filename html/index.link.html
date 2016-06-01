@@ -19,12 +19,16 @@
       </header>
 
       <p class="emoji-content">
-        John plugged in the electric lamp so he could read a book.
+      Smile or Wink? Seriously, just use poop already!
       </p>
 
       <a class="snippet-button" href="javascript:[CODE]">
-        <img src="img/icon.svg" alt="Emoji Logo" />
+        <img src="img/icon.svg" alt="Emoji Logo" class="logo-img" />
         EmojiPage
+        <img
+          class="side-img"
+          src="img/side.svg"
+        />
       </a>
 
       <img
@@ -33,8 +37,19 @@
         alt="For quick access, place your bookmarks here on the bookmark bar."
       />
       <div class="bookmark-bar-mobile">
-        [CODE]
+        <h2>Add as a bookmark to try elsewhere</h2>
+        <ol>
+          <li>Bookmark this page</li>
+          <li>Remove everything before and including the hash, so the url begins with <code>javascript:</code></li>
+          <li>Add the bookmark</li>
+        </ol>
       </div>
+
+      <!-- inject the bookmarklet as the url hash -->
+      <script>
+      window.location.hash = "javascript:[CODE]";
+      </script>
+
     </div>
   </body>
 </html>
