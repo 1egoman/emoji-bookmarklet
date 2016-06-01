@@ -25,6 +25,8 @@ body {
   margin-top: 2em;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  overflow-x: hidden;
 }
 
 // the header
@@ -81,16 +83,33 @@ header {
   font-family: "Salsa", "Helvetica", "Arial", sans-serif;
 
   display: block;
-  font-size: 3.6rem;
-  width: 8em;
+  font-size: 1.8rem;
+  max-width: 7em;
   padding: 0.3em;
   margin: 0.3em auto;
 
-  img {
+  .logo-img {
     vertical-align: middle;
     height: 1.5em;
     margin-top: -0.5em;
     margin-right: 0.5em;
+  }
+
+  .side-img {
+    display: none;
+    @media screen and (min-width: 800px) {
+      display: block;
+      position: absolute;
+      right: -92px;
+      margin-top: -88px;
+      z-index: -5;
+    }
+  }
+
+
+  @media screen and (min-width: 650px) {
+    max-width: 8em;
+    font-size: 3.6rem;
   }
 }
 
@@ -107,13 +126,32 @@ header {
 // on mobile: add bookmark by copying code
 .bookmark-bar-mobile {
   display: block;
-  @include full-width;
+  max-width: 800px;
   word-wrap: break-word;
-  overflow-y: scroll;
-  padding: 1em;
+  padding: 3em;
+  background-color: $color-emoji;
+
+  h2 {
+    
+  }
+
+  textarea {
+    color: $color-black;
+    width: 100%;
+    min-height: 5em;
+    resize: vertical;
+  }
 
   @media screen and (min-width: 650px) {
     display: none;
+  }
+}
+
+// some sample content to convert
+.emoji-content {
+  text-align: center;
+  @media screen and (min-width: 650px) {
+    font-size: 2rem;
   }
 }
 
